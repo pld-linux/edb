@@ -2,11 +2,13 @@ Summary:	Enlightenment Database Access Library
 Summary(pl):	Biblioteka Enlightementa dostêpu do baz danych
 Name:		edb
 Version:	1.0.5
-Release:	1
+%define	_snap	20050309
+Release:	1.%{_snap}.0.1
 License:	LGPL
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
-# Source0-md5:	c8ee165f92dbc6e6fd9c9114e90e338c
+#Source0:	http://dl.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
+Source0:        ftp://ftp.sparky.homelinux.org/pub/e17/%{name}-%{_snap}.tar.gz
+# Source0-md5:	afe1bc2c08e7a3de5b624856e56d69f5
 Patch0:		%{name}-ac_fix.patch
 URL:		http://www.enlightement.org/
 BuildRequires:	autoconf
@@ -61,16 +63,20 @@ GTK+ editor of databases.
 Edytor baz danych w GTK+.
 
 %prep
-%setup -q
+%setup -q -n %{name}
 %patch0 -p1
 
 %build
+CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"; export CFLAGS
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
-	--enable-cxx
+	--enable-cxx \
+	--enable-gtk \
+	--enable-ncurses
 
 %{__make}
 
@@ -90,6 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS
 %attr(755,root,root) %{_bindir}/edb_ed
+%attr(755,root,root) %{_bindir}/edb_vt_ed
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
