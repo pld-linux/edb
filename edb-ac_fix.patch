@@ -1,0 +1,97 @@
+--- edb-1.0.2/configure.in.wiget	Mon Oct 23 20:44:55 2000
++++ edb-1.0.2/configure.in	Fri Aug  9 17:58:08 2002
+@@ -1,5 +1,6 @@
+-AC_INIT(src/Edb.h)
+-AM_CONFIG_HEADER(config.h)
++AC_INIT
++AC_CONFIG_SRCDIR([src/Edb.h])
++AC_CONFIG_HEADERS([config.h])
+ AM_INIT_AUTOMAKE(edb, 1.0.2)
+ AC_PROG_CC
+ AM_PROG_CC_STDC
+@@ -74,7 +75,6 @@
+ 		CXXFLAGS="-fhandle-exceptions $CXXFLAGS"
+ 	fi
+ 
+-	LIBOBJS="$LIBOBJS \$(COBJS)"
+ fi
+ 
+ dnl There are additional libraries we need for some compiler/architecture
+@@ -88,7 +88,7 @@
+ 	[db_cv_compat185="$enable_compat185"], [db_cv_compat185="no"])
+ AC_MSG_RESULT($db_cv_compat185)
+ if test "$db_cv_compat185" = "yes"; then
+-	LIBOBJS="db185.o $LIBOBJS"
++	AC_LIBOBJ([db185])
+ fi
+ 
+ dnl Optional utilities.
+@@ -137,7 +137,15 @@
+ AC_CHECK_TYPE(ssize_t, int)
+ AC_C_BIGENDIAN
+ AC_C_CONST
+-AC_STRUCT_ST_BLKSIZE
++AC_DIAGNOSE([obsolete],[AC_STRUCT_ST_BLKSIZE:
++        your code should no longer depend upon `HAVE_ST_BLKSIZE', but
++        `HAVE_STRUCT_STAT_ST_BLKSIZE'.  Remove this warning and
++        the `AC_DEFINE' when you adjust the code.])
++AC_CHECK_MEMBERS([struct stat.st_blksize],[AC_DEFINE(HAVE_ST_BLKSIZE, 1,
++                            [Define to 1 if your `struct stat' has
++                             `st_blksize'.  Deprecated, use
++                             `HAVE_STRUCT_STAT_ST_BLKSIZE' instead.])])
++
+ AC_HEADER_STAT
+ AC_TYPE_MODE_T
+ AC_TYPE_OFF_T
+@@ -163,7 +171,9 @@
+ 
+ dnl A/UX has a broken getopt(3).
+ case "$host_os" in
+-aux*)	LIBOBJS="getopt.o $LIBOBJS";;
++aux*)	
++AC_LIBOBJ([getopt])
++;;
+ esac
+ 
+ dnl Checks for system functions for which we don't have replacements.
+@@ -453,7 +463,8 @@
+ 	AC_DEFINE(HAVE_ASSEM_UTS4_CC)
+ 	mutex_align="sizeof(int)"
+ 	spin_line1="typedef int tsl_t;"
+-	LIBOBJS="$LIBOBJS uts4.cc.o";;
++	AC_LIBOBJ([uts4.cc])
++	;;
+ x86/gcc)
+ 	AC_DEFINE(HAVE_ASSEM_X86_GCC)
+ 	mutex_align="1"
+@@ -647,15 +658,15 @@
+ fi
+ AC_MSG_RESULT($gtk_ok)
+ 
+-AC_CHECK_LIB(ncurses, putwin,
+-  AC_CHECK_HEADER(ncurses.h, ncurses_ok=yes, ncurses_ok=no),
++AC_CHECK_LIB(ncurses, putwin,[
++  AC_CHECK_HEADER(ncurses.h, ncurses_ok=yes, ncurses_ok=no)],
+   ncurses_ok=no,
+   -lncurses)
+   
+ AM_CONDITIONAL(EDB_VT_ED, test "$ncurses_ok" = yes)
+ AM_CONDITIONAL(EDB_GTK_ED, test "$gtk_ok" = yes)
+ 
+-AC_OUTPUT([
++AC_CONFIG_FILES([
+ Makefile
+ src/Makefile
+ tools/Makefile
+@@ -663,7 +674,8 @@
+ src/db.h
+ src/db_int.h
+ src/db_185.h
+-edb-config],
+-[
++edb-config])
++AC_CONFIG_COMMANDS([default],[[
+ chmod +x edb-config
+-])
++]],[[]])
++AC_OUTPUT
