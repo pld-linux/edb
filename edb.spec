@@ -68,8 +68,8 @@ Edytor baz danych w GTK.
 rm missing
 libtoolize --copy --force
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-cxx
 
