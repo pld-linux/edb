@@ -3,14 +3,17 @@ Summary(pl):	Biblioteka Enlightementa dostЙpu do baz danych
 Name:		edb
 Version:	1.0.2
 Release:	1
+License:	LGPL
 Group:		Libraries
 Group(de):	Libraries
 Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
-License:	LGPL
-URL:		http://www.enlightement.org/
+Group(pt_BR):	Bibliotecas
+Group(ru):	Библиотеки
+Group(uk):	Б╕бл╕отеки
 Source0:	http://prdownloads.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
+URL:		http://www.enlightement.org/
 BuildRequires:	ncurses-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	glib-devel
@@ -34,8 +37,12 @@ Summary:	header files and libraries for %{name} development
 Summary(pl):	Pliki nagЁСwkowe i dokumentacja dla %{name}
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
@@ -47,8 +54,12 @@ Summary:	Static version of %{name} libraries
 Summary(pl):	Statyczna wersja biblioteki %{name}
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
