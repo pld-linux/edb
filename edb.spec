@@ -5,13 +5,6 @@ Version:	1.0.2
 Release:	1
 License:	LGPL
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	Библиотеки
-Group(uk):	Б╕бл╕отеки
 Source0:	http://prdownloads.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
 URL:		http://www.enlightement.org/
 BuildRequires:	ncurses-devel
@@ -36,13 +29,6 @@ dostЙp/zapisywanie danych w bazach.
 Summary:	header files and libraries for %{name} development
 Summary(pl):	Pliki nagЁСwkowe i dokumentacja dla %{name}
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
@@ -56,13 +42,6 @@ korzystaj╠cych z biblioteki %{name}.
 Summary:	Static version of %{name} libraries
 Summary(pl):	Statyczna wersja biblioteki %{name}
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -75,11 +54,6 @@ Statyczna wersja biblioteki %{name}.
 Summary:	GTK editor of databases
 Summary(pl):	Edytor baz w GTK
 Group:		X11/Applications
-Group(de):	X11/Applikationen
-Group(es):	X11/Aplicaciones
-Group(pl):	X11/Aplikacje
-Group(pt_BR):	X11/AplicaГУes
-Group(pt):	X11/AplicaГУes
 
 %description gtk
 GTK editor of databases.
