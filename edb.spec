@@ -5,15 +5,15 @@ Version:	1.0.3
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://prdownloads.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac_fix.patch
 URL:		http://www.enlightement.org/
-BuildRequires:	ncurses-devel
-BuildRequires:	gtk+-devel
-BuildRequires:	glib-devel
-BuildRequires:	libtool
-BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	glib-devel
+BuildRequires:	gtk+-devel
+BuildRequires:	libtool
+BuildRequires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_x11prefix	%{_prefix}/X11R6
