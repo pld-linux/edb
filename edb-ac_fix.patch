@@ -1,6 +1,6 @@
---- edb-1.0.5/configure.in.orig	2004-07-13 06:02:42.000000000 +0200
-+++ edb-1.0.5/configure.in	2004-10-27 23:52:20.952292416 +0200
-@@ -24,55 +24,6 @@
+--- edb/configure.in~	2005-03-04 01:11:17.000000000 +0100
++++ edb/configure.in	2005-03-30 17:05:38.000000000 +0200
+@@ -25,55 +25,6 @@
  dnl AC_PROG_INSTALL()
  dnl AC_ARG_PROGRAM()
  
@@ -56,25 +56,14 @@
  dnl There are additional libraries we need for some compiler/architecture
  dnl combinations.
  AC_SUBST(LIBS)
-@@ -450,7 +401,6 @@
- src/edb_int.h
- src/edb_185.h
- debian/Makefile
--edb-config],
--[
+@@ -457,7 +408,6 @@
+ edb-native.oe
+ edb.bb
+ edbXnative.bb
+-debian/changelog
+-], [
 -chmod +x edb-config
 -])
-+edb-config])
++debian/changelog])
 +AC_CONFIG_COMMANDS([default],
 +	[chmod +x edb-config])
---- edb-1.0.5/src/os_stat.c.orig	2001-04-05 18:31:35.000000000 +0200
-+++ edb-1.0.5/src/os_stat.c	2004-10-27 23:52:51.401663408 +0200
-@@ -88,7 +88,7 @@
- 	 * Check for a 0 size -- the HP MPE/iX architecture has st_blksize,
- 	 * but it's always 0.
- 	 */
--#ifdef HAVE_ST_BLKSIZE
-+#ifdef HAVE_STRUCT_STAT_ST_BLKSIZE
- 	if (iosizep != NULL && (*iosizep = sb.st_blksize) == 0)
- 		*iosizep = DB_DEF_IOSIZE;
- #else
