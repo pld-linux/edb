@@ -28,29 +28,29 @@ Edb jest prost± bibliotek± wysokiego poziomu umo¿liwiaj±c±
 dostêp/zapisywanie danych w bazach.
 
 %package devel
-Summary:	header files and libraries for %{name} development
-Summary(pl):	Pliki nag³ówkowe i dokumentacja dla %{name}
+Summary:	Header files and libraries for edb development
+Summary(pl):	Pliki nag³ówkowe i dokumentacja dla edb
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 
 %description devel
-Header files and documentation needed for developing %{name} programs.
+Header files and documentation needed for developing edb programs.
 
 %description devel -l pl
 Pliki nag³ówkowe i dokumentacja umo¿liwiaj±ce rozwijanie programów
-korzystaj±cych z biblioteki %{name}.
+korzystaj±cych z biblioteki edb.
 
 %package static
-Summary:	Static version of %{name} libraries
-Summary(pl):	Statyczna wersja biblioteki %{name}
+Summary:	Static version of edb libraries
+Summary(pl):	Statyczna wersja biblioteki edb
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
 
 %description static
-Static version of %{name} libraries.
+Static version of edb libraries.
 
 %description static -l pl
-Statyczna wersja biblioteki %{name}.
+Statyczna wersja biblioteki edb.
 
 %package gtk
 Summary:	GTK editor of databases
