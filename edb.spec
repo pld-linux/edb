@@ -50,15 +50,15 @@ Static version of edb library.
 Statyczna wersja biblioteki edb.
 
 %package gtk
-Summary:	GTK editor of databases
-Summary(pl):	Edytor baz w GTK
+Summary:	GTK+ editor of databases
+Summary(pl):	Edytor baz w GTK+
 Group:		X11/Applications
 
 %description gtk
-GTK editor of databases.
+GTK+ editor of databases.
 
 %description gtk -l pl
-Edytor baz danych w GTK.
+Edytor baz danych w GTK+.
 
 %prep
 %setup -q
