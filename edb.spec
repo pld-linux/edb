@@ -17,9 +17,6 @@ BuildRequires:	libtool
 BuildRequires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_x11prefix	%{_prefix}/X11R6
-%define		_x11bindir	%{_x11prefix}/bin
-
 %description
 Edb is a simple, clean high-level db access/storage library.
 
@@ -41,13 +38,13 @@ Pliki nag³ówkowe i dokumentacja umo¿liwiaj±ce rozwijanie programów
 korzystaj±cych z biblioteki edb.
 
 %package static
-Summary:	Static version of edb libraries
+Summary:	Static version of edb library
 Summary(pl):	Statyczna wersja biblioteki edb
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
 
 %description static
-Static version of edb libraries.
+Static version of edb library.
 
 %description static -l pl
 Statyczna wersja biblioteki edb.
@@ -80,12 +77,9 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_x11bindir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-mv $RPM_BUILD_ROOT%{_bindir}/edb_gtk_ed $RPM_BUILD_ROOT%{_x11bindir}/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -102,9 +96,9 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/edb-config
-%{_includedir}/*
-%{_libdir}/lib*.la
 %attr(755,root,root) %{_libdir}/lib*.so
+%{_libdir}/lib*.la
+%{_includedir}/*
 
 %files static
 %defattr(644,root,root,755)
@@ -112,4 +106,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files gtk
 %defattr(644,root,root,755)
-%{_x11bindir}/*
+%attr(755,root,root) %{_bindir}/edb_gtk_ed
