@@ -1,5 +1,5 @@
 Summary:	Enlightenment Database Access Library
-Summary(pl):	Biblioteka Enlightementa dostêpu do baz danych 
+Summary(pl):	Biblioteka Enlightementa dostêpu do baz danych
 Name:		edb
 Version:	1.0.2
 Release:	1
@@ -46,6 +46,9 @@ Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name} = %{version}
 
 %description devel
+Header files and documentation needed for developing %{name} programs.
+
+%description devel -l pl
 Pliki nag³ówkowe i dokumentacja umo¿liwiaj±ce rozwijanie programów
 korzystaj±cych z biblioteki %{name}.
 
@@ -65,7 +68,7 @@ Requires:	%{name}-devel = %{version}
 %description static
 Static version of %{name} libraries.
 
-%description -l pl
+%description static -l pl
 Statyczna wersja biblioteki %{name}.
 
 %package gtk
@@ -81,7 +84,7 @@ Group(pt):	X11/Aplicações
 %description gtk
 GTK editor of databases.
 
-%description -l pl gtk
+%description gtk -l pl
 Edytor baz danych w GTK.
 
 %prep
@@ -105,8 +108,7 @@ install -d $RPM_BUILD_ROOT%{_x11bindir}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv $RPM_BUILD_ROOT%{_bindir}/edb_gtk_ed \
-   $RPM_BUILD_ROOT%{_x11bindir}/
+mv $RPM_BUILD_ROOT%{_bindir}/edb_gtk_ed $RPM_BUILD_ROOT%{_x11bindir}/
 
 gzip -9nf AUTHORS
 
