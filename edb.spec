@@ -6,6 +6,7 @@ Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
+# Source0-md5:	eb2a0e0eb8876b817e01427d1f09f838
 Patch0:		%{name}-ac_fix.patch
 URL:		http://www.enlightement.org/
 BuildRequires:	autoconf
