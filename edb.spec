@@ -1,12 +1,12 @@
 Summary:	Enlightenment Database Access Library
 Summary(pl):	Biblioteka Enlightementa dostêpu do baz danych
 Name:		edb
-Version:	1.0.3
+Version:	1.0.5
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
-# Source0-md5:	eb2a0e0eb8876b817e01427d1f09f838
+# Source0-md5:	c8ee165f92dbc6e6fd9c9114e90e338c
 Patch0:		%{name}-ac_fix.patch
 URL:		http://www.enlightement.org/
 BuildRequires:	autoconf
@@ -28,7 +28,7 @@ dostêp/zapisywanie danych w bazach.
 Summary:	Header files and libraries for edb development
 Summary(pl):	Pliki nag³ówkowe i dokumentacja dla edb
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files and documentation needed for developing edb programs.
@@ -41,7 +41,7 @@ korzystaj±cych z biblioteki edb.
 Summary:	Static version of edb library
 Summary(pl):	Statyczna wersja biblioteki edb
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of edb library.
@@ -65,7 +65,6 @@ Edytor baz danych w GTK.
 %patch0 -p1
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -98,7 +97,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/edb-config
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
-%{_includedir}/*
+%{_includedir}/Edb.h
+%{_pkgconfigdir}/edb.pc
 
 %files static
 %defattr(644,root,root,755)
