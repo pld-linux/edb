@@ -6,6 +6,7 @@ Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://prdownloads.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
+Patch0:		%{name}-ac_fix.patch
 URL:		http://www.enlightement.org/
 BuildRequires:	ncurses-devel
 BuildRequires:	gtk+-devel
@@ -63,6 +64,7 @@ Edytor baz danych w GTK.
 
 %prep
 %setup -q
+%patch0 -p1 -b .wiget
 
 %build
 rm missing
@@ -100,6 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/edb-config
 %{_includedir}/*
 %attr(755,root,root) %{_libdir}/lib*.la
 %attr(755,root,root) %{_libdir}/lib*.so
