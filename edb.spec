@@ -1,7 +1,7 @@
 Summary:	Enlightenment Database Access Library
 Summary(pl):	Biblioteka Enlightementa dostêpu do baz danych
 Name:		edb
-Version:	1.0.2
+Version:	1.0.3
 Release:	1
 License:	LGPL
 Group:		Libraries
@@ -64,7 +64,7 @@ Edytor baz danych w GTK.
 
 %prep
 %setup -q
-%patch0 -p1 -b .wiget
+%patch0 -p1
 
 %build
 rm missing
@@ -86,8 +86,6 @@ install -d $RPM_BUILD_ROOT%{_x11bindir}
 
 mv $RPM_BUILD_ROOT%{_bindir}/edb_gtk_ed $RPM_BUILD_ROOT%{_x11bindir}/
 
-gzip -9nf AUTHORS
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -96,7 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS
 %attr(755,root,root) %{_bindir}/edb_ed
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
