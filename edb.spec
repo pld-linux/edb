@@ -1,14 +1,14 @@
 Summary:	Enlightenment Database Access Library
 Summary(pl):	Biblioteka Enlightementa dostêpu do baz danych
 Name:		edb
-Version:	1.0.5
-%define	_snap	20050309
+Version:	1.0.5.003
+%define	_snap	20050701
 Release:	1.%{_snap}.0.1
-License:	LGPL
+License:	BSD
 Group:		Libraries
 #Source0:	http://dl.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
-Source0:        ftp://ftp.sparky.homelinux.org/pub/e17/%{name}-%{_snap}.tar.gz
-# Source0-md5:	afe1bc2c08e7a3de5b624856e56d69f5
+Source0:        ftp://ftp.sparky.homelinux.org/snaps/enli/e17/libs/%{name}-%{_snap}.tar.gz
+# Source0-md5:	870592c7ef67ae31abfe5f37861a689e
 Patch0:		%{name}-ac_fix.patch
 URL:		http://www.enlightement.org/
 BuildRequires:	autoconf
@@ -94,7 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS
+%doc AUTHORS COPYING COPYING-PLAIN README
 %attr(755,root,root) %{_bindir}/edb_ed
 %attr(755,root,root) %{_bindir}/edb_vt_ed
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
