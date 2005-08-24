@@ -1,6 +1,6 @@
---- edb/configure.in~	2005-03-04 01:11:17.000000000 +0100
-+++ edb/configure.in	2005-03-30 17:05:38.000000000 +0200
-@@ -25,55 +25,6 @@
+--- edb-1.0.5.004/configure.in.orig	2005-07-30 08:03:20.000000000 +0200
++++ edb-1.0.5.004/configure.in	2005-08-24 13:54:09.000000000 +0200
+@@ -24,55 +24,6 @@
  dnl AC_PROG_INSTALL()
  dnl AC_ARG_PROGRAM()
  
@@ -56,7 +56,16 @@
  dnl There are additional libraries we need for some compiler/architecture
  dnl combinations.
  AC_SUBST(LIBS)
-@@ -457,7 +408,6 @@
+@@ -404,7 +355,7 @@
+ ncurses_ok=no
+ gtk_ok=no
+ 
+-GTK_CONFIG=`which gtk-config`
++GTK_CONFIG=/usr/bin/gtk-config
+ if test -x "$GTK_CONFIG"; then 
+   AC_CHECK_LIB(gtk, gtk_init, gtk_ok=yes, gtk_ok=no, `$GTK_CONFIG --libs`)
+ fi
+@@ -456,7 +407,6 @@
  edb-native.oe
  edb.bb
  edbXnative.bb
