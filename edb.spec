@@ -8,7 +8,7 @@ Group:		Libraries
 Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
 # Source0-md5:	2565467041d770240f93969c6055e35f
 Patch0:		%{name}-ac_fix.patch
-URL:		http://www.enlightement.org/
+URL:		http://enlightenment.org/Libraries/Edb/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	glib-devel
