@@ -1,13 +1,12 @@
 Summary:	Enlightenment Database Access Library
 Summary(pl):	Biblioteka Enlightementa dostêpu do baz danych
 Name:		edb
-Version:	1.0.5.004
+Version:	1.0.5.005
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
-# Source0-md5:	2565467041d770240f93969c6055e35f
-Patch0:		%{name}-ac_fix.patch
+# Source0-md5:	6b6eaa69ea05bf4b4972554f34fd8919
 URL:		http://enlightenment.org/Libraries/Edb/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -62,7 +61,6 @@ Edytor baz danych w GTK+.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"; export CFLAGS
