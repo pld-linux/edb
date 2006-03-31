@@ -1,12 +1,12 @@
 Summary:	Enlightenment Database Access Library
 Summary(pl):	Biblioteka Enlightementa dostêpu do baz danych
 Name:		edb
-Version:	1.0.5.006
+Version:	1.0.5.007
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
-# Source0-md5:	14d2612d7b4ecca1b5cecee0589903fa
+# Source0-md5:	e5d8dcb5995913ae6b7f205e7ac28dbe
 URL:		http://enlightenment.org/Libraries/Edb/
 BuildRequires:	autoconf
 BuildRequires:	automake
