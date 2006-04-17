@@ -1,13 +1,12 @@
 Summary:	Enlightenment Database Access Library
 Summary(pl):	Biblioteka Enlightementa dostêpu do baz danych
 Name:		edb
-Version:	1.0.5
+Version:	1.0.5.007
 Release:	1
-License:	LGPL
+License:	BSD
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
-# Source0-md5:	c8ee165f92dbc6e6fd9c9114e90e338c
-Patch0:		%{name}-ac_fix.patch
+Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
+# Source0-md5:	e5d8dcb5995913ae6b7f205e7ac28dbe
 URL:		http://enlightenment.org/Libraries/Edb/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -62,15 +61,18 @@ Edytor baz danych w GTK+.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
+CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"; export CFLAGS
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
-	--enable-cxx
+	--enable-cxx \
+	--enable-gtk \
+	--enable-ncurses
 
 %{__make}
 
@@ -88,8 +90,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS
+%doc AUTHORS COPYING COPYING-PLAIN README
 %attr(755,root,root) %{_bindir}/edb_ed
+%attr(755,root,root) %{_bindir}/edb_vt_ed
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
