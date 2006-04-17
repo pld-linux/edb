@@ -14,6 +14,7 @@ BuildRequires:	glib-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,6 +29,7 @@ Summary:	Header files and libraries for edb development
 Summary(pl):	Pliki nag³ówkowe i dokumentacja dla edb
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	zlib-devel
 
 %description devel
 Header files and documentation needed for developing edb programs.
