@@ -1,5 +1,5 @@
 Summary:	Enlightenment Database Access Library
-Summary(pl):	Biblioteka Enlightementa dostêpu do baz danych
+Summary(pl.UTF-8):   Biblioteka Enlightementa dostÄ™pu do baz danych
 Name:		edb
 Version:	1.0.5.007
 Release:	1
@@ -20,13 +20,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Edb is a simple, clean high-level db access/storage library.
 
-%description -l pl
-Edb jest prost± bibliotek± wysokiego poziomu umo¿liwiaj±c±
-dostêp/zapisywanie danych w bazach.
+%description -l pl.UTF-8
+Edb jest prostÄ… bibliotekÄ… wysokiego poziomu umoÅ¼liwiajÄ…cÄ…
+dostÄ™p/zapisywanie danych w bazach.
 
 %package devel
 Summary:	Header files and libraries for edb development
-Summary(pl):	Pliki nag³ówkowe i dokumentacja dla edb
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe i dokumentacja dla edb
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	zlib-devel
@@ -34,31 +34,31 @@ Requires:	zlib-devel
 %description devel
 Header files and documentation needed for developing edb programs.
 
-%description devel -l pl
-Pliki nag³ówkowe i dokumentacja umo¿liwiaj±ce rozwijanie programów
-korzystaj±cych z biblioteki edb.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe i dokumentacja umoÅ¼liwiajÄ…ce rozwijanie programÃ³w
+korzystajÄ…cych z biblioteki edb.
 
 %package static
 Summary:	Static version of edb library
-Summary(pl):	Statyczna wersja biblioteki edb
+Summary(pl.UTF-8):   Statyczna wersja biblioteki edb
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static version of edb library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna wersja biblioteki edb.
 
 %package gtk
 Summary:	GTK+ editor of databases
-Summary(pl):	Edytor baz w GTK+
+Summary(pl.UTF-8):   Edytor baz w GTK+
 Group:		X11/Applications
 
 %description gtk
 GTK+ editor of databases.
 
-%description gtk -l pl
+%description gtk -l pl.UTF-8
 Edytor baz danych w GTK+.
 
 %prep
