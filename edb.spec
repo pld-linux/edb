@@ -1,5 +1,5 @@
 Summary:	Enlightenment Database Access Library
-Summary(pl.UTF-8):   Biblioteka Enlightementa dostępu do baz danych
+Summary(pl.UTF-8):	Biblioteka Enlightementa dostępu do baz danych
 Name:		edb
 Version:	1.0.5.007
 Release:	1
@@ -26,7 +26,7 @@ dostęp/zapisywanie danych w bazach.
 
 %package devel
 Summary:	Header files and libraries for edb development
-Summary(pl.UTF-8):   Pliki nagłówkowe i dokumentacja dla edb
+Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja dla edb
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	zlib-devel
@@ -40,7 +40,7 @@ korzystających z biblioteki edb.
 
 %package static
 Summary:	Static version of edb library
-Summary(pl.UTF-8):   Statyczna wersja biblioteki edb
+Summary(pl.UTF-8):	Statyczna wersja biblioteki edb
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -52,7 +52,7 @@ Statyczna wersja biblioteki edb.
 
 %package gtk
 Summary:	GTK+ editor of databases
-Summary(pl.UTF-8):   Edytor baz w GTK+
+Summary(pl.UTF-8):	Edytor baz w GTK+
 Group:		X11/Applications
 
 %description gtk
