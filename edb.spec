@@ -9,11 +9,11 @@ Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
 # Source0-md5:	e5d8dcb5995913ae6b7f205e7ac28dbe
 URL:		http://enlightenment.org/Libraries/Edb/
 BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	glib-devel
+BuildRequires:	automake >= 1.4
 BuildRequires:	gtk+-devel
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel
+# only for configure
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -29,7 +29,6 @@ Summary:	Header files and libraries for edb development
 Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja dla edb
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	zlib-devel
 
 %description devel
 Header files and documentation needed for developing edb programs.
@@ -52,14 +51,14 @@ Statyczna wersja biblioteki edb.
 
 %package gtk
 Summary:	GTK+ editor of databases
-Summary(pl.UTF-8):	Edytor baz w GTK+
+Summary(pl.UTF-8):	Edytor baz oparty na GTK+
 Group:		X11/Applications
 
 %description gtk
 GTK+ editor of databases.
 
 %description gtk -l pl.UTF-8
-Edytor baz danych w GTK+.
+Edytor baz danych oparty na GTK+.
 
 %prep
 %setup -q
@@ -95,19 +94,19 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS COPYING COPYING-PLAIN README
 %attr(755,root,root) %{_bindir}/edb_ed
 %attr(755,root,root) %{_bindir}/edb_vt_ed
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libedb.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/edb-config
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libedb.so
+%{_libdir}/libedb.la
 %{_includedir}/Edb.h
 %{_pkgconfigdir}/edb.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libedb.a
 
 %files gtk
 %defattr(644,root,root,755)
