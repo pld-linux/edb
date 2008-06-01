@@ -1,12 +1,12 @@
 Summary:	Enlightenment Database Access Library
 Summary(pl.UTF-8):	Biblioteka Enlightementa dostępu do baz danych
 Name:		edb
-Version:	1.0.5.007
-Release:	2
+Version:	1.0.5.042
+Release:	1
 License:	BSD
 Group:		Libraries
-Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
-# Source0-md5:	e5d8dcb5995913ae6b7f205e7ac28dbe
+Source0:	http://download.enlightenment.org/snapshots/2008-01-25/%{name}-%{version}.tar.bz2
+# Source0-md5:	4cd3e07507efc316f759468a98f0b5bf
 URL:		http://enlightenment.org/Libraries/Edb/
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.4
@@ -94,11 +94,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS COPYING COPYING-PLAIN README
 %attr(755,root,root) %{_bindir}/edb_ed
 %attr(755,root,root) %{_bindir}/edb_vt_ed
-%attr(755,root,root) %{_libdir}/libedb.so.*.*.*
+%attr(755,root,root) %{_libdir}/libedb.so.*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/edb-config
 %attr(755,root,root) %{_libdir}/libedb.so
 %{_libdir}/libedb.la
 %{_includedir}/Edb.h
