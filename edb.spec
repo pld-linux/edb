@@ -8,8 +8,8 @@ Group:		Libraries
 Source0:	http://download.enlightenment.org/snapshots/2008-01-25/%{name}-%{version}.tar.bz2
 # Source0-md5:	4cd3e07507efc316f759468a98f0b5bf
 URL:		http://enlightenment.org/Libraries/Edb/
-BuildRequires:	autoconf
-BuildRequires:	automake >= 1.4
+BuildRequires:	autoconf >= 2.52
+BuildRequires:	automake >= 1.6
 BuildRequires:	gtk+-devel
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel
@@ -94,7 +94,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS COPYING COPYING-PLAIN README
 %attr(755,root,root) %{_bindir}/edb_ed
 %attr(755,root,root) %{_bindir}/edb_vt_ed
-%attr(755,root,root) %{_libdir}/libedb.so.*
+%attr(755,root,root) %{_libdir}/libedb.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libedb.so.1
 
 %files devel
 %defattr(644,root,root,755)
