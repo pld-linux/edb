@@ -1,12 +1,13 @@
+%define		_snap	20080813
 Summary:	Enlightenment Database Access Library
 Summary(pl.UTF-8):	Biblioteka Enlightementa dostępu do baz danych
 Name:		edb
-Version:	1.0.5.042
-Release:	1
+Version:	1.0.5.043
+Release:	0.%{_snap}.1
 License:	BSD
 Group:		Libraries
-Source0:	http://download.enlightenment.org/snapshots/2008-01-25/%{name}-%{version}.tar.bz2
-# Source0-md5:	4cd3e07507efc316f759468a98f0b5bf
+Source0:	%{name}-%{version}-%{_snap}.tar.bz2
+# Source0-md5:	e5d58d14f0333b2b292a23153cee8da3
 URL:		http://enlightenment.org/Libraries/Edb/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
@@ -61,7 +62,7 @@ GTK+ editor of databases.
 Edytor baz danych oparty na GTK+.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-%{_snap}
 
 %build
 CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"; export CFLAGS
