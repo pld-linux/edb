@@ -3,7 +3,7 @@ Summary:	Enlightenment Database Access Library
 Summary(pl.UTF-8):	Biblioteka Enlightementa dostępu do baz danych
 Name:		edb
 Version:	1.0.5.043
-Release:	0.%{_snap}.3
+Release:	0.%{_snap}.4
 License:	BSD
 Group:		Libraries
 Source0:	%{name}-%{version}-%{_snap}.tar.bz2
